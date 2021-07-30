@@ -67,8 +67,8 @@ Project is a weather app that shows the search locations current weather and eve
 | Working with API | H | 3hr| :---:  | :---: |
 | Create Dyn HTML | H |  1hr | :---: | :---: |
 | Basic CSS Layout| H |  1hr | :---: | :---: |
-| Incorporate Flex Box | 2hr |  :---: | :---: | :---: |
-| Adjust CSS | 1hr |  :---: | :---: | :---: |
+| Incorporate Flex Box | H |  2hr | :---: | :---: |
+| Adjust CSS | H |  1hr | :---: | :---: |
 | Pseudocode | H |  5hr | :---: | :---: |
 | Append items to DOM | H |  3hr | :---: | :---: |
 | Make sure API calls render | H |  3hr | :---: | :---: |
