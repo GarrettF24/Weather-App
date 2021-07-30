@@ -78,7 +78,7 @@ Project is a weather app that shows the search locations current weather and eve
 | Add Emoji| L |  5hr | :---: | :---: |
 | Emoji Drop Display | L |  4hr | :---: | :---: |
 | Emoji Animations| L |  10hr | :---: | :---: |
-| Total | H | | :---: | :---: |
+| Total | H=Done for DeadLine | 46 | :---: | :---: |
 
 ## Code Snippet
 
