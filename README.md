@@ -26,23 +26,22 @@ Project is a weather app that shows the search locations current weather and eve
   
 
 #### MVP 
-1. On submiting a search, value will call on api using axios.get
-2. Append returned info from api call to div that holds temp, forecast and append that div to container and style with flex box.
-3. Mild background color that seems to be raised slightly(make div container slightly raised) so it appears divs rest on background instead of part of it.
-4. Background on divs dark color and get lighter toward outsides to draw attention to forecast/info.
-5. On hover the div will increase in size marginally and slight light box shadow. And increase of 1px in border size. All string/containers of strings in stark contrast to containers to make relevant info pop out a bit more.
-6. Media query that collapses all the divs on top of each other for mobile/tablet size
+1. User will search by location, either city/state or region/country, or all 3. Current weather(CW) will be returned.
+2. On the return the locations CW will be shown in middle of screen.
+3. The background of the CW will appear slightly raised, as if the CW box is sitting atop the background body, as opposed to appearing to be apart of it.
+4. CW background will also be dark but as it extends out will get lighter to draw attention to relevant info.
+5. When the mouse pointer is over the CW, the size will increase marginally and become slightly more emphasized. (Once multiply weather boxes are rendered it will draw attention to current weather box.
+6. If site viewed on mobile or tablet the scale of webpage will be adjusted accordingly to fit. Elements on webpage will be stacked neatly on top of one another.
 
 #### PostMVP  
-1. Add in a future forcast underneath the current search's day's weather 
-2. Create functionality that has a drop down on div load that represents the weather in emojis(if(rain))rain coat), (if(temp>80))hotface). 
-3. On addEventListener('mouseover', showStrings(emojis) a string will pop up on div with relevant "friendly saying". On mouseover snowflake "Dress warm, don't want you to catch a chill!"(possibly find api for "sayings" and connect winter/cold weather sayings to cold weather emojis, hot weather sayings for hot weather emojis, etc.) 
-4. On drop down emojis opacity fills in starting from bottom to create drawer opening effect. Addeventlistener. When "drawer” closes top of emoji filters out to create shutting effect.  Links on top of site to other weather sites. 
-5. For further down the line possibly- Add animation on emojis relevant to emoji/weather. Raining/snowflakes, swaying tree branches. 
+1. Add in a future forcast underneath the current search's day's weather. 
+2. When CW loads, a drop down display will appear underneath with emojis that are relevant to CW. (Example, if it is raining, a raincoat emoji will appear.)
+3. When the mouse passes over an emoji, a text box will appear with a relevant phrase to the CW emoji. (Example, if mouse passes over raincoat phrase will say "Stay dry out there, wouldn't want to catch a cold!") 
+4. When the drop down display occurs, the emojis will appear similar to when a drawer is opened. When drop down display closes a similar effect will happen on emojis to simulate a closing drawer.
+5. Emojis will also have relevant animations.(Example, if it's raining then raindrops will appear on/around raincoat.
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
+  
 
 
 |  Day | Deliverable | Status
@@ -67,14 +66,19 @@ This schedule will be used to keep track of your progress throughout the week an
 | Adding Form | H | 2hr| :---: | :---: |
 | Working with API | H | 3hr| :---:  | :---: |
 | Create Dyn HTML | H |  1hr | :---: | :---: |
-| CSS| H |  4hr | :---: | :---: |
+| Basic CSS Layout| H |  1hr | :---: | :---: |
+| Incorporate Flex Box | 2hr |  :---: | :---: | :---: |
+| Adjust CSS | 1hr |  :---: | :---: | :---: |
 | Pseudocode | H |  5hr | :---: | :---: |
-| Js Functionality | H |  10hr | :---: | :---: |
+| Append items to DOM | H |  3hr | :---: | :---: |
+| Make sure API calls render | H |  3hr | :---: | :---: |
+| Remove Elements on new Search Fn | H|  1hr | :---: | :---: |
+| Clean Code/Refactor | H | 1hr | :--: | :---: |
 | Future Forecast | M |  4hr | :---: | :---: |
 | Add Emoji| L |  5hr | :---: | :---: |
 | Emoji Drop Display | L |  4hr | :---: | :---: |
 | Emoji Animations| L |  10hr | :---: | :---: |
-| Total | H | 48| :---: | :---: |
+| Total | H | | :---: | :---: |
 
 ## Code Snippet
 
