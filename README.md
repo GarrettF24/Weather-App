@@ -26,7 +26,7 @@ Project is a weather app that shows the search locations current weather and eve
   
 
 #### MVP 
-1. User will search by location, either city/state or region/country, or all 3. Current weather(CW) will be returned.
+1. User will search by location by city. A drop down list of all towns that name will appear. User will be able to specify further by state and country. On clicking submit the current weather (CW) will appear.
 2. On the return the locations CW will be shown in middle of screen.
 3. The background of the CW will appear slightly raised, as if the CW box is sitting atop the background body, as opposed to appearing to be apart of it.
 4. CW background will also be dark but as it extends out will get lighter to draw attention to relevant info.
