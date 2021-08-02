@@ -2,10 +2,11 @@ const apiKey = `fca1955459bd82830eba1555a57b84ca`;
 const searchBtn = document.querySelector("#search");
 let searchValue = "";
 const divContainer = document.querySelector("#container");
+const weatherSearchDiv = document.createElement("div");
 // const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
 
 const getWeatherData = async () => {
-  //removeCurrentWeather here
+  removeCurrentWeather(weatherSearchDiv);
   searchValue = document.querySelector("#weather-input").value;
   try {
     const find = await axios.get(
@@ -15,7 +16,6 @@ const getWeatherData = async () => {
     console.log(weatherData);
 
     // weatherData.forEach((weatherSearch) => {
-    const weatherSearchDiv = document.createElement("div");
     weatherSearchDiv.classList.add("current-weather");
     divContainer.append(weatherSearchDiv);
     //Need to find way to display all keys from weather and main.
@@ -29,20 +29,26 @@ const getWeatherData = async () => {
     weatherSearchDiv.append(name);
 
     //Icon(which is in weather)
+    const icon = document.createElement("img");
+    // icon.src =
+    // weatherSearchDiv.append(icon);
+    console.log(weatherData.weather[0].icon);
 
     //Weather info -icon
     const weather = document.createElement("h3");
-    weather.textContent = `${weatherData.weather}`;
+    weather.textContent = `${weatherData.weather[0].description}`;
     weatherSearchDiv.append(weather);
 
     //Main temp info of location
-    const temp = document.createElement("p");
-    temp.textContent = `${weatherData.main}`;
-    weatherSearchDiv.append(temp);
-
+    const mainArr = Object.entries(weatherData.main);
+    mainArr.forEach((value) => {
+      const temp = document.createElement("p");
+      temp.textContent = `${value[0]}:  ${value[1]}`;
+      weatherSearchDiv.append(temp);
+    });
     //Wind speed
     const windSpeed = document.createElement("p");
-    windSpeed.textContent = `${weatherData.wind}`;
+    windSpeed.textContent = `wind speed:  ${weatherData.wind.speed}`;
     weatherSearchDiv.append(windSpeed);
     // });
   } catch (error) {
@@ -76,6 +82,11 @@ searchBtn.addEventListener("click", getWeatherData);
 //function removeCurrentWeather {
 // In this function simply remove the divs from the page when a new search is initiated
 //}
+function removeCurrentWeather(element) {
+  while (element.lastChild) {
+    element.removeChild(element.lastChild);
+  }
+}
 
 // PMVP'S
 
