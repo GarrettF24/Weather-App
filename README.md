@@ -26,7 +26,7 @@ Project is a weather app that shows the search locations current weather and eve
   
 
 #### MVP 
-1. User will search by location by city. A drop down list of all towns that name will appear. User will be able to specify further by state and country. On clicking submit the current weather (CW) will appear.
+1. User will search by location by city,state,country. On clicking submit the current weather (CW) will appear.
 2. On the return the locations CW will be shown in middle of screen.
 3. The background of the CW will appear slightly raised, as if the CW box is sitting atop the background body, as opposed to appearing to be apart of it.
 4. CW background will also be dark but as it extends out will get lighter to draw attention to relevant info.
@@ -34,11 +34,12 @@ Project is a weather app that shows the search locations current weather and eve
 6. If site viewed on mobile or tablet the scale of webpage will be adjusted accordingly to fit. Elements on webpage will be stacked neatly on top of one another.
 
 #### PostMVP  
-1. Add in a future forcast underneath the current search's day's weather. 
-2. When CW loads, a drop down display will appear underneath with emojis that are relevant to CW. (Example, if it is raining, a raincoat emoji will appear.)
-3. When the mouse passes over an emoji, a text box will appear with a relevant phrase to the CW emoji. (Example, if mouse passes over raincoat phrase will say "Stay dry out there, wouldn't want to catch a cold!") 
-4. When the drop down display occurs, the emojis will appear similar to when a drawer is opened. When drop down display closes a similar effect will happen on emojis to simulate a closing drawer.
-5. Emojis will also have relevant animations.(Example, if it's raining then raindrops will appear on/around raincoat.
+1. Add a drop down on search so all cities with that name will appear. User will be able to specify using state/territory and country.
+2. Add in a future forcast underneath the current search's day's weather. 
+3. When CW loads, a drop down display will appear underneath with emojis that are relevant to CW. (Example, if it is raining, a raincoat emoji will appear.)
+4. When the mouse passes over an emoji, a text box will appear with a relevant phrase to the CW emoji. (Example, if mouse passes over raincoat phrase will say "Stay dry out there, wouldn't want to catch a cold!") 
+5. When the drop down display occurs, the emojis will appear similar to when a drawer is opened. When drop down display closes a similar effect will happen on emojis to simulate a closing drawer.
+6. Emojis will also have relevant animations.(Example, if it's raining then raindrops will appear on/around raincoat.
 
 ## Project Schedule
   
