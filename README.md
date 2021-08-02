@@ -64,16 +64,16 @@ Project is a weather app that shows the search locations current weather and eve
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 2hr| :---: | :---: |
-| Working with API | H | 3hr| :---:  | :---: |
-| Create Dyn HTML | H |  1hr | :---: | :---: |
-| Basic CSS Layout| H |  1hr | :---: | :---: |
+| Adding Form | H | 2hr| 1hr | 1hr |
+| Working with API | H | 3hr| 3hr  | 3hr |
+| Create Dyn HTML | H |  1hr | 1hr | 1hr |
+| Basic CSS Layout| H |  1hr | 1.5hr | 1.5hr |
 | Incorporate Flex Box | H |  2hr | :---: | :---: |
 | Adjust CSS | H |  1hr | :---: | :---: |
-| Pseudocode | H |  5hr | :---: | :---: |
-| Append items to DOM | H |  3hr | :---: | :---: |
-| Make sure API calls render | H |  3hr | :---: | :---: |
-| Remove Elements on new Search Fn | H|  1hr | :---: | :---: |
+| Pseudocode | H |  5hr | 2hr | 2hr|
+| Append items to DOM | H |  3hr | 2hr | 2hr |
+| Make sure API calls render | H |  3hr | 2hr | 2hr |
+| Remove Elements on new Search Fn | H|  1hr | 20min | 20min |
 | Clean Code/Refactor | H | 1hr | :--: | :---: |
 | Future Forecast | M |  4hr | :---: | :---: |
 | Add Emoji| L |  5hr | :---: | :---: |
