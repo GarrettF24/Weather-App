@@ -3,9 +3,6 @@ const searchBtn = document.querySelector("#search");
 let searchValue = "";
 const divContainer = document.querySelector("#container");
 // const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
-console.log(searchBtn);
-console.log(searchValue);
-// hello
 
 const getWeatherData = async () => {
   //removeCurrentWeather here
@@ -16,6 +13,38 @@ const getWeatherData = async () => {
     );
     const weatherData = find.data;
     console.log(weatherData);
+
+    // weatherData.forEach((weatherSearch) => {
+    const weatherSearchDiv = document.createElement("div");
+    weatherSearchDiv.classList.add("current-weather");
+    divContainer.append(weatherSearchDiv);
+    //Need to find way to display all keys from weather and main.
+    //Object.keys()?
+    //Do I need to loop through anything because
+    //my searches only return one location?
+
+    //Name of Location
+    const name = document.createElement("h1");
+    name.textContent = `${weatherData.name}`;
+    weatherSearchDiv.append(name);
+
+    //Icon(which is in weather)
+
+    //Weather info -icon
+    const weather = document.createElement("h3");
+    weather.textContent = `${weatherData.weather}`;
+    weatherSearchDiv.append(weather);
+
+    //Main temp info of location
+    const temp = document.createElement("p");
+    temp.textContent = `${weatherData.main}`;
+    weatherSearchDiv.append(temp);
+
+    //Wind speed
+    const windSpeed = document.createElement("p");
+    windSpeed.textContent = `${weatherData.wind}`;
+    weatherSearchDiv.append(windSpeed);
+    // });
   } catch (error) {
     console.error(error);
   }
@@ -31,15 +60,7 @@ searchBtn.addEventListener("click", getWeatherData);
 // Async await function weatherData() {
 // Log to check data is called correctly
 // Save  data to const
-function renderData(weather) {
-  weather.forEach((weatherSearch) => {
-    const weatherSearchDiv = document.createElement("div");
-    weatherSearchDiv.classList.add("current-weather");
-    divContainer.append(weatherSearchDiv);
 
-    //Name of Location
-  });
-}
 // function renderData(render)
 // Ask about what im calling on here. I think value of search input will be called on here because I am obtaining data that I will apply to elements.
 //  {
