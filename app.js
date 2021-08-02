@@ -1,16 +1,21 @@
 const apiKey = `fca1955459bd82830eba1555a57b84ca`;
 const searchBtn = document.querySelector("#search");
-const searchValue = document.querySelector("#weather-input");
-const url = `api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
+let searchValue = "";
+const divContainer = document.querySelector("#container");
+// const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
 console.log(searchBtn);
 console.log(searchValue);
 // hello
 
 const getWeatherData = async () => {
   //removeCurrentWeather here
+  searchValue = document.querySelector("#weather-input").value;
   try {
-    const find = await axios.get(url);
-    console.log(find);
+    const find = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`
+    );
+    const weatherData = find.data;
+    console.log(weatherData);
   } catch (error) {
     console.error(error);
   }
@@ -26,6 +31,15 @@ searchBtn.addEventListener("click", getWeatherData);
 // Async await function weatherData() {
 // Log to check data is called correctly
 // Save  data to const
+function renderData(weather) {
+  weather.forEach((weatherSearch) => {
+    const weatherSearchDiv = document.createElement("div");
+    weatherSearchDiv.classList.add("current-weather");
+    divContainer.append(weatherSearchDiv);
+
+    //Name of Location
+  });
+}
 // function renderData(render)
 // Ask about what im calling on here. I think value of search input will be called on here because I am obtaining data that I will apply to elements.
 //  {
