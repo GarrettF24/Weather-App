@@ -2,9 +2,11 @@ header {
   display: flex;
   margin: 0px 0px 20px 0px;
   border: 1px solid black;
-  background-color: #333;
   width: 100%; /* Full width */
+  align-items: center;
+  justify-content: center;
 }
+
 .weather-search {
   display: flex;
   align-items: center;
@@ -50,6 +52,5 @@ footer {
   display: flex;
   margin: 20px 0px 0px 0px;
   border: 1px solid black;
-  background-color: #333;
   width: 100%; /* Full width */
 }

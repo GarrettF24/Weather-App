@@ -10,7 +10,7 @@ const getWeatherData = async () => {
   searchValue = document.querySelector("#weather-input").value;
   try {
     const find = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey}`
     );
     const weatherData = find.data;
     console.log(weatherData);
@@ -36,7 +36,7 @@ const getWeatherData = async () => {
 
     //Weather info -icon
     const weather = document.createElement("h3");
-    weather.textContent = `${weatherData.weather[0].description}`;
+    weather.textContent = `${weatherData.weather[0].main}`;
     weatherSearchDiv.append(weather);
 
     //Main temp info of location
@@ -111,3 +111,7 @@ function removeCurrentWeather(element) {
 //function allWeatherInfo() {
 //Have a clickable element on CW that when clicked will have a simple pop up box that displays all possible current weather info.
 // }
+
+//weather image conidtionals
+//weather images taken from
+//https://worldweather.wmo.int/en/wxicons.html
