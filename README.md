@@ -19,7 +19,7 @@ Project is a weather app that shows the search locations current weather and eve
   
 ## Wireframes
 
-[wireframe] (https://lucid.app/lucidchart/4c91cf61-63ab-4047-ac55-e06251ceaaa2/edit?beaconFlowId=D87A830629F9E81F&page=0_0#)
+[wireframe] (https://lucid.app/lucidchart/invitations/accept/inv_ad9dc89f-3f66-4bc0-bfad-d1cfdb06c7a7?viewport_loc=-565%2C-19%2C2893%2C1400%2C0_0)
 
 
 ### MVP/PostMVP
