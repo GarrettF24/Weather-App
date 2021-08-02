@@ -1,28 +1,31 @@
-// Save api url to constant variable
-const weatherUrl = 
-//weatherDiv created/selected here
-//
-//Global variables here as needed
+const apiKey = `fca1955459bd82830eba1555a57b84ca`;
+const searchBtn = document.querySelector("#search");
+const searchValue = document.querySelector("#weather-input");
+const url = `api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
+console.log(searchBtn);
+console.log(searchValue);
+// hello
 
-// Create async await function that sends a request to api using axios.get,
 const getWeatherData = async () => {
   //removeCurrentWeather here
   try {
-
+    const find = await axios.get(url);
+    console.log(find);
   } catch (error) {
     console.error(error);
   }
 };
+searchBtn.addEventListener("click", getWeatherData);
+
+// Save api url to constant variable
+//weatherDiv created/selected here
+
+//Global variables here as needed
+
+// Create async await function that sends a request to api using axios.get,
 // Async await function weatherData() {
-// try{
 // Log to check data is called correctly
 // Save  data to const
-
-//  }  catch (err) {
-// Console.error(err)
-// }
-// }
-
 // function renderData(render)
 // Ask about what im calling on here. I think value of search input will be called on here because I am obtaining data that I will apply to elements.
 //  {
