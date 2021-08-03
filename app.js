@@ -1,62 +1,63 @@
 const apiKey = `fca1955459bd82830eba1555a57b84ca`;
 const searchBtn = document.querySelector("#search");
-let searchValue = "";
 const divContainer = document.querySelector("#container");
 const weatherSearchDiv = document.createElement("div");
-// const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}`;
 
 const getWeatherData = async () => {
   removeCurrentWeather(weatherSearchDiv);
-  searchValue = document.querySelector("#weather-input").value;
+  let searchValue = document.querySelector("#weather-input").value;
   try {
     const find = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey}`
     );
     const weatherData = find.data;
     console.log(weatherData);
-
-    // weatherData.forEach((weatherSearch) => {
-    weatherSearchDiv.classList.add("current-weather");
-    divContainer.append(weatherSearchDiv);
-    //Need to find way to display all keys from weather and main.
-    //Object.keys()?
-    //Do I need to loop through anything because
-    //my searches only return one location?
-
-    //Name of Location
-    const name = document.createElement("h1");
-    name.textContent = `${weatherData.name}`;
-    weatherSearchDiv.append(name);
-
-    //Icon(which is in weather)
-    const icon = document.createElement("img");
-    // icon.src =
-    // weatherSearchDiv.append(icon);
-    console.log(weatherData.weather[0].icon);
-
-    //Weather info -icon
-    const weather = document.createElement("h3");
-    weather.textContent = `${weatherData.weather[0].main}`;
-    weatherSearchDiv.append(weather);
-
-    //Main temp info of location
-    const mainArr = Object.entries(weatherData.main);
-    mainArr.forEach((value) => {
-      const temp = document.createElement("p");
-      temp.textContent = `${value[0]}:  ${value[1]}`;
-      weatherSearchDiv.append(temp);
-    });
-    //Wind speed
-    const windSpeed = document.createElement("p");
-    windSpeed.textContent = `wind speed:  ${weatherData.wind.speed}`;
-    weatherSearchDiv.append(windSpeed);
-    // });
+    renderData(weatherData);
   } catch (error) {
     console.error(error);
   }
 };
+
 searchBtn.addEventListener("click", getWeatherData);
 
+function renderData(data) {
+  weatherSearchDiv.classList.add("current-weather");
+  divContainer.append(weatherSearchDiv);
+
+  //Name of Location
+  const name = document.createElement("h1");
+  name.textContent = `${data.name}`;
+  weatherSearchDiv.append(name);
+
+  //Icon(which is in weather)
+  const icon = document.createElement("img");
+  icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+  weatherSearchDiv.append(icon);
+  console.log(data.weather[0].icon);
+
+  //Weather info-Main
+  const weather = document.createElement("h3");
+  weather.textContent = `${data.weather[0].main}`;
+  weatherSearchDiv.append(weather);
+
+  //Main temp info of location
+  const mainArr = Object.entries(data.main);
+  mainArr.forEach((value) => {
+    const temp = document.createElement("p");
+    temp.textContent = `${value[0]}:  ${value[1]}`;
+    weatherSearchDiv.append(temp);
+  });
+  //Wind speed
+  const windSpeed = document.createElement("p");
+  windSpeed.textContent = `wind speed:  ${data.wind.speed}`;
+  weatherSearchDiv.append(windSpeed);
+}
+
+function removeCurrentWeather(element) {
+  while (element.lastChild) {
+    element.removeChild(element.lastChild);
+  }
+}
 // Save api url to constant variable
 //weatherDiv created/selected here
 
@@ -82,11 +83,6 @@ searchBtn.addEventListener("click", getWeatherData);
 //function removeCurrentWeather {
 // In this function simply remove the divs from the page when a new search is initiated
 //}
-function removeCurrentWeather(element) {
-  while (element.lastChild) {
-    element.removeChild(element.lastChild);
-  }
-}
 
 // PMVP'S
 
