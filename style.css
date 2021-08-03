@@ -4,11 +4,12 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-header {
+#header {
   display: flex;
   /* margin: 0px 0px 20px 0px;
-  border: 1px solid black;
-  width: 100%; */
+  border: 1px solid black; */
+  /* width: 100%; */
+  margin: 0 auto;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -49,7 +50,7 @@ header {
 #container {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   border: 1px solid red;
   background: linear-gradient(0.25turn, #030303, #3023a3, #030303);
 }
@@ -67,8 +68,20 @@ header {
   color: antiquewhite;
 }
 
+.current-weather:hover {
+  transform: scale(1.02);
+  transition: 0.8s ease;
+}
+
 .current-weather img {
   width: 15%;
+}
+
+section {
+  width: 100%;
+  height: 20vh;
+  border: 1px solid red;
+  margin-top: 5px;
 }
 
 footer {
