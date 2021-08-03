@@ -35,7 +35,7 @@ function renderData(data) {
   weatherSearchDiv.append(icon);
 
   //Weather info-Main
-  const weather = document.createElement("h3");
+  const weather = document.createElement("h2");
   weather.textContent = `${data.weather[0].main}`;
   weatherSearchDiv.append(weather);
 
