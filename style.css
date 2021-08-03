@@ -86,14 +86,14 @@ footer {
   font-size: 20px;
 }
 
-section {
+/* section {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 15vh;
   order: 1;
-  /* margin-top: 5px; */
-}
+  margin-top: 5px; 
+} */
 
 footer {
   display: flex;
@@ -125,6 +125,11 @@ footer {
     align-items: center;
     align-self: center;
     color: rgba(250, 235, 215, 0.781);
+  }
+
+  .current-weather:hover {
+    transform: none;
+    transition: none;
   }
 
   #weather-input {

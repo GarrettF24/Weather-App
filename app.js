@@ -1,8 +1,10 @@
+//Global variables that are used throughout functionality
 const apiKey = `fca1955459bd82830eba1555a57b84ca`;
 const searchBtn = document.querySelector("#search");
 const divContainer = document.querySelector("#container");
 const weatherSearchDiv = document.createElement("div");
-
+//Async await function that calls on api
+//assign the data that is fetched from the api to a constant.
 const getWeatherData = async () => {
   removeCurrentWeather(weatherSearchDiv);
   let searchValue = document.querySelector("#weather-input").value;
@@ -17,9 +19,11 @@ const getWeatherData = async () => {
     console.error(error);
   }
 };
-
+//On clicking the search button getWeatherData is called on and it's
+//corresponding functions
 searchBtn.addEventListener("click", getWeatherData);
-
+//renderData function builds elements and assigns data to each element,
+//all elements are stored in weatherSearchDiv which is appened to divContainer.
 function renderData(data) {
   weatherSearchDiv.classList.add("current-weather");
   divContainer.append(weatherSearchDiv);
@@ -51,7 +55,7 @@ function renderData(data) {
   windSpeed.textContent = `wind speed:  ${data.wind.speed}`;
   weatherSearchDiv.append(windSpeed);
 }
-
+//This function removes current weatherDiv when a new search is initiated.
 function removeCurrentWeather(element) {
   while (element.lastChild) {
     element.removeChild(element.lastChild);
