@@ -109,6 +109,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     height: 80vh;
+    width: 50vh;
     background: linear-gradient(0.25turn, #030303, #3023a3, #030303);
   }
   .current-weather {
@@ -118,7 +119,7 @@ footer {
     border-radius: 25px;
     margin: 5% 0px;
     height: 60vh;
-    /* width: 30vh; */
+    width: 50vh;
     background: linear-gradient(0.25turn, #160f58bb, #1616ee73, #160f58bb);
     align-items: center;
     align-self: center;
