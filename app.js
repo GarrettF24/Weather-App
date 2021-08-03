@@ -33,7 +33,6 @@ function renderData(data) {
   const icon = document.createElement("img");
   icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
   weatherSearchDiv.append(icon);
-  console.log(data.weather[0].icon);
 
   //Weather info-Main
   const weather = document.createElement("h3");
@@ -107,7 +106,3 @@ function removeCurrentWeather(element) {
 //function allWeatherInfo() {
 //Have a clickable element on CW that when clicked will have a simple pop up box that displays all possible current weather info.
 // }
-
-//weather image conidtionals
-//weather images taken from
-//https://worldweather.wmo.int/en/wxicons.html
