@@ -29,7 +29,7 @@ Project is a weather app that shows the search locations current weather and eve
 1. User will search by location by city,state,country. On clicking submit the current weather (CW) will appear.
 2. On the return the locations CW will be shown in middle of screen.
 3. The background of the CW will appear slightly raised, as if the CW box is sitting atop the background body, as opposed to appearing to be apart of it.
-4. CW background will also be dark but as it extends out will get lighter to draw attention to relevant info.
+4. The whole page will start dark from outsides and becomer lighter as it goes towards the middle. With the CW weather report resting above the lightest middle part.
 5. When the mouse pointer is over the CW, the size will increase marginally and become slightly more emphasized. Also the text content and imagery of CW will be a lighter color to contrast with the dark background. (Once multiply weather boxes are rendered it will draw attention to current weather box.
 6. If site viewed on mobile or tablet the scale of webpage will be adjusted accordingly to fit. Elements on webpage will be stacked neatly on top of one another.
 
