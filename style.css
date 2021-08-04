@@ -26,11 +26,12 @@ body {
 
 .link-container {
   display: flex;
-  width: 500px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .link-container a {
-  justify-content: space-between;
+  padding: 0px 30px;
 }
 
 .weather-search {
@@ -111,10 +112,14 @@ body {
 
 footer {
   display: flex;
-  margin: 20px 0px 0px 0px;
-  border: none;
-  width: 100%;
+  width: 98%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   background-color: #e6d9d957;
+  padding: 20px 10px;
+
   font-family: "Raleway", sans-serif;
 }
 
