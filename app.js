@@ -4,6 +4,8 @@ const searchBtn = document.querySelector("#search");
 const divContainer = document.querySelector("#container");
 const weatherSearchDiv = document.createElement("div");
 let searchValue = "";
+const coorContainer = document.createElement("div");
+
 //Async await function that calls on api
 //assign the data that is fetched from the api to a constant.
 const getWeatherData = async () => {
@@ -152,4 +154,4 @@ function removeCurrentWeather(element) {
 //?? side bar search will =`https://api.troposphere.io/forecast/${weatherData.coord.latitude},${weatherData.coord.longitude}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`;
 //If that works won't need to start over/replace openweather api.
 //Then forecast.forEach((day) => {create div, create searchValue.hourly that gets appended to div, })
-//troposhere only has Celcius. will have to switch units parameter to imperial.
+//troposhere only has Celcius. will have to switch units parameter to metric.
