@@ -110,3 +110,5 @@ function removeCurrentWeather(element) {
 //function allWeatherInfo() {
 //Have a clickable element on CW that when clicked will have a simple pop up box that displays all possible current weather info.
 // }
+
+// 211bc6c1f26e4b5c935db86da478c199
