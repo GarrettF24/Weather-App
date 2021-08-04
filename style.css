@@ -70,7 +70,7 @@ footer {
   margin: 5% 0px;
   height: 60vh;
   width: 60vh;
-  background: linear-gradient(0.25turn, #160f58bb, #1616ee73, #160f58bb);
+  background: linear-gradient(0.25turn, #160f58bb, #0c0c8573, #160f58bb);
   align-items: center;
   align-self: center;
   color: rgba(250, 235, 215, 0.781);
@@ -83,7 +83,7 @@ footer {
 }
 
 .current-weather img {
-  width: 15%;
+  width: 20%;
 }
 
 .current-weather p {

@@ -110,5 +110,31 @@ function removeCurrentWeather(element) {
 //function allWeatherInfo() {
 //Have a clickable element on CW that when clicked will have a simple pop up box that displays all possible current weather info.
 // }
-
+//
+//
+//
+//
+//
 // 211bc6c1f26e4b5c935db86da478c199
+
+//troposphere api will not output forecast on location search
+//it only takes latitude and longitude to output 7 day hourly forecast.
+//After presentation(weekend if no hw) I want to replace current api with this one
+//and when user inputs search location, main div will show current weather of
+//said location. I need to somehow select the coordinates from the search location
+//and have them render the forecast in the side bar.
+//would I have to do two seperate async functions that calls on search location
+//and lat, long and have the value of search input select the lat and long from the location search?
+// if search input=https://api.troposphere.io/place/name/${searchValue}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c...
+//side bar search will = `https://api.troposphere.io/forecast/${searchValue.data.latitude},${searchValue.data.longitude}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`
+//Then forecast.forEach((day) => {create div, create searchValue.hourly that gets appended to div, })
+
+//Just looked at openWeatherApi and the coordinates match with troposphere coordinates, sounds obvious but wasn't the case
+//with some other api's i looked at.
+
+//So instead of line 124,125...
+//if search input=`api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=fca1955459bd82830eba1555a57b84ca`
+//?? side bar search will =`https://api.troposphere.io/forecast/${weatherData.coord.latitude},${weatherData.coord.longitude}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`;
+//If that works won't need to start over/replace openweather api.
+//Then forecast.forEach((day) => {create div, create searchValue.hourly that gets appended to div, })
+//troposhere only has Celcius. will have to switch units parameter to imperial.
