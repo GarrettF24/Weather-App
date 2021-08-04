@@ -3,11 +3,12 @@ const apiKey = `fca1955459bd82830eba1555a57b84ca`;
 const searchBtn = document.querySelector("#search");
 const divContainer = document.querySelector("#container");
 const weatherSearchDiv = document.createElement("div");
+let searchValue = "";
 //Async await function that calls on api
 //assign the data that is fetched from the api to a constant.
 const getWeatherData = async () => {
+  searchValue = document.querySelector("#weather-input").value;
   removeCurrentWeather(weatherSearchDiv);
-  let searchValue = document.querySelector("#weather-input").value;
   try {
     const find = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey}`
@@ -22,6 +23,20 @@ const getWeatherData = async () => {
 //On clicking the search button getWeatherData is called on and it's
 //corresponding functions
 searchBtn.addEventListener("click", getWeatherData);
+
+const getWeatherForecast = async () => {
+  //searchValue = the input values coordinates from the other api
+  searchValue;
+  try {
+    const findForecast = await axios.get(
+      `https://api.troposphere.io/forecast/${searchValue.data.coord.lat},${searchValue.data.coord.lon}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`
+    );
+
+    console.log(findForecast);
+  } catch (error) {
+    console.error(error);
+  }
+};
 //renderData function builds elements and assigns data to each element,
 //all elements are stored in weatherSearchDiv which is appened to divContainer.
 function renderData(data) {

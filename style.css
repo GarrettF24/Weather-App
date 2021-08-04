@@ -28,10 +28,25 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  color: whitesmoke;
+}
+
+a {
+  color: #ffffff;
+} /* Unvisited link  */
+a:visited {
+  color: #ffffff;
+} /* Visited link    */
+a:hover {
+  color: #ffffff;
+} /* Mouse over link */
+a:active {
+  color: #ffffff;
 }
 
 .link-container a {
-  padding: 0px 30px;
+  padding: 0px 10px;
+  text-decoration: none;
 }
 
 .weather-search {
