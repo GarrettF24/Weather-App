@@ -4,7 +4,6 @@ const searchBtn = document.querySelector("#search");
 const divContainer = document.querySelector("#container");
 const weatherSearchDiv = document.createElement("div");
 let searchValue = "";
-const coorContainer = document.createElement("div");
 
 //Async await function that calls on api
 //assign the data that is fetched from the api to a constant.
@@ -16,29 +15,33 @@ const getWeatherData = async () => {
       `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey}`
     );
     const weatherData = find.data;
-    console.log(weatherData);
+    const lat = weatherData.coord.lat;
+    const lon = weatherData.coord.lon;
+    const findForecast = await axios.get(
+      `https://api.troposphere.io/forecast/${lat},${lon}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`
+    );
+    const dailyForecast = findForecast.data.data.daily;
+    console.log(dailyForecast);
+    // console.log(lon);
+    // console.log(lat);
+    // console.log(weatherData);
+    // console.log(findForecast);
     renderData(weatherData);
   } catch (error) {
     console.error(error);
   }
 };
+
+function renderForecast(data) {
+  const arr = Object.entries;
+  data.forEach((day) => {
+    const dailyDiv = document.createElement("div");
+  });
+}
 //On clicking the search button getWeatherData is called on and it's
 //corresponding functions
 searchBtn.addEventListener("click", getWeatherData);
 
-const getWeatherForecast = async () => {
-  //searchValue = the input values coordinates from the other api
-  searchValue;
-  try {
-    const findForecast = await axios.get(
-      `https://api.troposphere.io/forecast/${searchValue.data.coord.lat},${searchValue.data.coord.lon}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`
-    );
-
-    console.log(findForecast);
-  } catch (error) {
-    console.error(error);
-  }
-};
 //renderData function builds elements and assigns data to each element,
 //all elements are stored in weatherSearchDiv which is appened to divContainer.
 function renderData(data) {
