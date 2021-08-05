@@ -24,6 +24,10 @@ body {
   /* margin-top: -10px; */
 }
 
+#header h1 {
+  color: #ffffff;
+}
+
 .link-container {
   display: flex;
   width: 100%;
@@ -87,14 +91,37 @@ a:active {
   background: linear-gradient(0.25turn, #030303, #3023a3, #030303);
 }
 
+.forecast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 98%;
+  height: 30vh;
+  background: linear-gradient(0.25turn, #030303, #3023a3, #030303);
+}
+
+.daily-weather {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  height: 20vh;
+  border-radius: 25px;
+  margin: 0 auto;
+  background: linear-gradient(0.25turn, #160f58bb, #0c0c8573, #160f58bb);
+  align-items: center;
+  align-self: center;
+  color: rgba(250, 235, 215, 0.781);
+}
+
 .current-weather {
   display: flex;
   flex-direction: column;
   /* border: 1px solid red; */
   border-radius: 25px;
-  margin: 5% 0px;
-  height: 60vh;
-  width: 60vh;
+  margin: 2% 0px;
+  height: 50vh;
+  width: 50vh;
   background: linear-gradient(0.25turn, #160f58bb, #0c0c8573, #160f58bb);
   align-items: center;
   align-self: center;
@@ -127,6 +154,7 @@ a:active {
 
 footer {
   display: flex;
+  flex-direction: column;
   width: 98%;
   margin: 0 auto;
   align-items: center;

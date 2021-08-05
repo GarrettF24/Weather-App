@@ -3,6 +3,8 @@ const apiKey = `fca1955459bd82830eba1555a57b84ca`;
 const searchBtn = document.querySelector("#search");
 const divContainer = document.querySelector("#container");
 const weatherSearchDiv = document.createElement("div");
+const weatherForecast = document.querySelector(".forecast-container");
+const dailyDiv = document.createElement("div");
 let searchValue = "";
 
 //Async await function that calls on api
@@ -10,6 +12,7 @@ let searchValue = "";
 const getWeatherData = async () => {
   searchValue = document.querySelector("#weather-input").value;
   removeCurrentWeather(weatherSearchDiv);
+  removeCurrentWeather(dailyDiv);
   try {
     const find = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey}`
@@ -27,20 +30,30 @@ const getWeatherData = async () => {
     // console.log(weatherData);
     // console.log(findForecast);
     renderData(weatherData);
+    renderForecast(dailyForecast);
   } catch (error) {
     console.error(error);
   }
 };
 
-function renderForecast(data) {
-  const arr = Object.entries;
-  data.forEach((day) => {
-    const dailyDiv = document.createElement("div");
-  });
-}
 //On clicking the search button getWeatherData is called on and it's
 //corresponding functions
 searchBtn.addEventListener("click", getWeatherData);
+
+function renderForecast(data) {
+  data.forEach((day) => {
+    dailyDiv.classList.add("daily-weather");
+    dailyDiv.textContent = `
+    <h4>${day.type}</h4>
+    <p>temp: ${Math.floor(day.temperature)}</p>
+    <p>temp_min: ${Math.floor(day.temperatureMin)}</p>
+    <p>temp_max: ${Math.floor(day.temperatureMax)}</p>
+    <p>pressure: ${Math.floor(day.preasure)}</p>
+    <p>humidity: ${Math.floor(day.relHumidity)}</p>
+    `;
+    weatherForecast.append(dailyDiv);
+  });
+}
 
 //renderData function builds elements and assigns data to each element,
 //all elements are stored in weatherSearchDiv which is appened to divContainer.
@@ -71,9 +84,9 @@ function renderData(data) {
     weatherSearchDiv.append(temp);
   });
   //Wind speed
-  const windSpeed = document.createElement("p");
-  windSpeed.textContent = `wind speed:  ${data.wind.speed}`;
-  weatherSearchDiv.append(windSpeed);
+  // const windSpeed = document.createElement("p");
+  // windSpeed.textContent = `wind speed:  ${data.wind.speed}`;
+  // weatherSearchDiv.append(windSpeed);
 }
 //This function removes current weatherDiv when a new search is initiated.
 function removeCurrentWeather(element) {
@@ -158,3 +171,29 @@ function removeCurrentWeather(element) {
 //If that works won't need to start over/replace openweather api.
 //Then forecast.forEach((day) => {create div, create searchValue.hourly that gets appended to div, })
 //troposhere only has Celcius. will have to switch units parameter to metric.
+
+// function renderForecast(data) {
+//   data.forEach((day) => {
+//     dailyDiv.classList.add("daily-weather");
+//     dailyDiv.textContent = `
+//     <h4>${data.type}</h4>
+//     <p>temp: ${data.temperature}</p>
+//     <p>temp_min: ${data.temperatureMin}</p>
+//     <p>temp_max: ${data.temperatureMax}</p>
+//     <p>pressure: ${data.preasure}</p>
+//     <p>humidity: ${data.relHumidity}</p>
+//     `;
+//     weatherForecast.append(dailyDiv);
+//   });
+// }
+
+// function renderForecast(data) {
+//   const arr = Object.entries(data);
+//   arr.forEach((day) => {
+//     dailyDiv.classList.add("daily-weather");
+//     const divInfo = document.createElement("p");
+//     divInfo.textContent = day;
+//     dailyDiv.append(divInfo);
+//     weatherForecast.append(dailyDiv);
+//   });
+// }
