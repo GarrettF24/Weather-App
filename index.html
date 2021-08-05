@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://kit.fontawesome.com/6fe82cd02e.js" crossorigin="anonymous"></script>
   <script defer src="./app.js"></script>
   <link rel="stylesheet" href="./style.css">
   <title>Weather App</title>
@@ -15,19 +16,20 @@
       <div><a target="blank" href="https://www.ventusky.com/">Weather Map</a></div>
       <div><a target="blank" href="https://www.wunderground.com/history">Historical Weather Data</a></div>
       <div><a target="blank" href="https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions">EPA Reports</a></div>
-      
     </div>
     <h1>Weather APP</h1>
   </div>
   
   <div class="weather-search">
     <input autocomplete="off" type="text" id="weather-input" placeholder="Find Weather Report">
-    <button id="search">Search</button>
+    <button id="search"><i class="fas fa-search"></i></button>
   </div>
   
   <div id="container">
     <!-- Weather div will go here. -->
-    <div class="forecast-container"></div>
+    <div class="forecast-container">
+      <!-- Forecast here -->
+    </div>
   </div>
 
 

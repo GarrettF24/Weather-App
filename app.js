@@ -4,7 +4,6 @@ const searchBtn = document.querySelector("#search");
 const divContainer = document.querySelector("#container");
 const weatherSearchDiv = document.createElement("div");
 const weatherForecast = document.querySelector(".forecast-container");
-const dailyDiv = document.createElement("div");
 let searchValue = "";
 
 //Async await function that calls on api
@@ -12,10 +11,10 @@ let searchValue = "";
 const getWeatherData = async () => {
   searchValue = document.querySelector("#weather-input").value;
   removeCurrentWeather(weatherSearchDiv);
-  removeCurrentWeather(dailyDiv);
+  removeCurrentWeather();
   try {
     const find = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=${apiKey}`
     );
     const weatherData = find.data;
     const lat = weatherData.coord.lat;
@@ -42,16 +41,16 @@ searchBtn.addEventListener("click", getWeatherData);
 
 function renderForecast(data) {
   data.forEach((day) => {
-    dailyDiv.classList.add("daily-weather");
-    dailyDiv.textContent = `
-    <h4>${day.type}</h4>
-    <p>temp: ${Math.floor(day.temperature)}</p>
-    <p>temp_min: ${Math.floor(day.temperatureMin)}</p>
-    <p>temp_max: ${Math.floor(day.temperatureMax)}</p>
-    <p>pressure: ${Math.floor(day.preasure)}</p>
-    <p>humidity: ${Math.floor(day.relHumidity)}</p>
+    let dailyData = `
+    <div class="daily-data-container">
+      <h4>${day.type}</h4>
+      <p>temp: ${Math.floor(day.temperature)}</p>
+      <p>temp_min: ${Math.floor(day.temperatureMin)}</p>
+      <p>temp_max: ${Math.floor(day.temperatureMax)}</p>
+      <p>humidity: ${Math.floor(day.relHumidity)}</p>
+    </div>
     `;
-    weatherForecast.append(dailyDiv);
+    weatherForecast.insertAdjacentHTML("beforeend", dailyData);
   });
 }
 
@@ -83,10 +82,6 @@ function renderData(data) {
     temp.textContent = `${value[0]}:  ${value[1]}`;
     weatherSearchDiv.append(temp);
   });
-  //Wind speed
-  // const windSpeed = document.createElement("p");
-  // windSpeed.textContent = `wind speed:  ${data.wind.speed}`;
-  // weatherSearchDiv.append(windSpeed);
 }
 //This function removes current weatherDiv when a new search is initiated.
 function removeCurrentWeather(element) {
@@ -94,31 +89,6 @@ function removeCurrentWeather(element) {
     element.removeChild(element.lastChild);
   }
 }
-// Save api url to constant variable
-//weatherDiv created/selected here
-
-//Global variables here as needed
-
-// Create async await function that sends a request to api using axios.get,
-// Async await function weatherData() {
-// Log to check data is called correctly
-// Save  data to const
-
-// function renderData(render)
-// Ask about what im calling on here. I think value of search input will be called on here because I am obtaining data that I will apply to elements.
-//  {
-// This function to be called on  to create divs and assign the values when calling on api data.
-// render.forEach()
-// Api data will be called on by going through the data object  which I know is correct by having been able to log it in  the asynchronous weatherData function.
-// Assign data to variable/or something that represents the data?
-// Create elements and assign them the relevant data called on by navigating through the api data object using dot notation.
-// Append these objects to the weatherDiv which in turn will be appended to divContainer.
-//Eventually target the future forecast data and append that to the actual CW div so that the future forecast is displayed underneath CW
-// }
-
-//function removeCurrentWeather {
-// In this function simply remove the divs from the page when a new search is initiated
-//}
 
 // PMVP'S
 
@@ -142,58 +112,4 @@ function removeCurrentWeather(element) {
 
 //function allWeatherInfo() {
 //Have a clickable element on CW that when clicked will have a simple pop up box that displays all possible current weather info.
-// }
-//
-//
-//
-//
-//
-// 211bc6c1f26e4b5c935db86da478c199
-
-//troposphere api will not output forecast on location search
-//it only takes latitude and longitude to output 7 day hourly forecast.
-//After presentation(weekend if no hw) I want to replace current api with this one
-//and when user inputs search location, main div will show current weather of
-//said location. I need to somehow select the coordinates from the search location
-//and have them render the forecast in the side bar.
-//would I have to do two seperate async functions that calls on search location
-//and lat, long and have the value of search input select the lat and long from the location search?
-// if search input=https://api.troposphere.io/place/name/${searchValue}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c...
-//side bar search will = `https://api.troposphere.io/forecast/${searchValue.data.latitude},${searchValue.data.longitude}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`
-//Then forecast.forEach((day) => {create div, create searchValue.hourly that gets appended to div, })
-
-//Just looked at openWeatherApi and the coordinates match with troposphere coordinates, sounds obvious but wasn't the case
-//with some other api's i looked at.
-
-//So instead of line 124,125...
-//if search input=`api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=imperial&appid=fca1955459bd82830eba1555a57b84ca`
-//?? side bar search will =`https://api.troposphere.io/forecast/${weatherData.coord.latitude},${weatherData.coord.longitude}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`;
-//If that works won't need to start over/replace openweather api.
-//Then forecast.forEach((day) => {create div, create searchValue.hourly that gets appended to div, })
-//troposhere only has Celcius. will have to switch units parameter to metric.
-
-// function renderForecast(data) {
-//   data.forEach((day) => {
-//     dailyDiv.classList.add("daily-weather");
-//     dailyDiv.textContent = `
-//     <h4>${data.type}</h4>
-//     <p>temp: ${data.temperature}</p>
-//     <p>temp_min: ${data.temperatureMin}</p>
-//     <p>temp_max: ${data.temperatureMax}</p>
-//     <p>pressure: ${data.preasure}</p>
-//     <p>humidity: ${data.relHumidity}</p>
-//     `;
-//     weatherForecast.append(dailyDiv);
-//   });
-// }
-
-// function renderForecast(data) {
-//   const arr = Object.entries(data);
-//   arr.forEach((day) => {
-//     dailyDiv.classList.add("daily-weather");
-//     const divInfo = document.createElement("p");
-//     divInfo.textContent = day;
-//     dailyDiv.append(divInfo);
-//     weatherForecast.append(dailyDiv);
-//   });
 // }
