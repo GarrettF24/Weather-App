@@ -11,7 +11,7 @@ let searchValue = "";
 const getWeatherData = async () => {
   searchValue = document.querySelector("#weather-input").value;
   removeCurrentWeather(weatherSearchDiv);
-  // removeCurrentWeather();
+  removeCurrentWeather(weatherForecast);
   try {
     const find = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=${apiKey}`
@@ -23,11 +23,6 @@ const getWeatherData = async () => {
       `https://api.troposphere.io/forecast/${lat},${lon}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`
     );
     const dailyForecast = findForecast.data.data.daily;
-    console.log(dailyForecast);
-    // console.log(lon);
-    // console.log(lat);
-    // console.log(weatherData);
-    // console.log(findForecast);
     renderData(weatherData);
     renderForecast(dailyForecast);
   } catch (error) {
@@ -65,7 +60,7 @@ function renderData(data) {
   name.textContent = `${data.name}`;
   weatherSearchDiv.append(name);
 
-  //Icon(which is in weather)
+  //Icon
   const icon = document.createElement("img");
   icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
   weatherSearchDiv.append(icon);
@@ -75,7 +70,7 @@ function renderData(data) {
   weather.textContent = `${data.weather[0].main}`;
   weatherSearchDiv.append(weather);
 
-  //Main temp info of location
+  //Main temp info
   const mainArr = Object.entries(data.main);
   mainArr.forEach((value) => {
     const temp = document.createElement("p");
@@ -89,27 +84,3 @@ function removeCurrentWeather(element) {
     element.removeChild(element.lastChild);
   }
 }
-
-// PMVP'S
-
-//function displayNearbyWeather {
-// In the side bar of page on search of CW location the nearest 5(?) locations weather will also pop up. these 5 other locations will be appended to side bar and will show the same data as the CW div but the other current weather divs (OCW) will be much smaller.
-// }
-
-//function displayEmojis() {
-// Create functionality that has a drop down on div load that represents the weather in emojis(if(rain) return rain coat),
-// (if(temp > 80) return hotface)
-//On drop down emojis opacity fills in starting from bottom to create drawer opening effect. Addeventlistener. When "drawer” closes top of emoji filters out to create shutting effect
-//}
-
-//function emojiText() {
-// On addEventListener('mouseover', showStrings(emojis) a string will pop up on div with relevant "friendly saying". On mouseover snowflake "Dress warm, don't want you to catch a chill!"(possibly find api for "sayings" and connect winter/cold weather sayings to cold weather emojis, hot weather sayings for hot weather emojis, etc)
-// }
-
-//function animateEmojis() {
-//Add animation on emojis relevant to emoji/weather. Rainingsnowflakes, swaying tree branches
-//}
-
-//function allWeatherInfo() {
-//Have a clickable element on CW that when clicked will have a simple pop up box that displays all possible current weather info.
-// }
