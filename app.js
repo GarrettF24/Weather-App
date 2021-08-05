@@ -11,7 +11,7 @@ let searchValue = "";
 const getWeatherData = async () => {
   searchValue = document.querySelector("#weather-input").value;
   removeCurrentWeather(weatherSearchDiv);
-  removeCurrentWeather();
+  // removeCurrentWeather();
   try {
     const find = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=${apiKey}`
