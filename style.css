@@ -143,7 +143,7 @@ a:active {
   border-radius: 25px;
   margin: 2% 0px;
   height: 50vh;
-  width: 50vh;
+  width: 50vw;
   background: linear-gradient(0.25turn, #160f58bb, #0c0c8573, #160f58bb);
   align-items: center;
   align-self: center;
@@ -157,12 +157,12 @@ a:active {
 }
 
 .current-weather img {
-  width: 20%;
+  width: 20vw;
 }
 
 .current-weather p {
-  margin: 5px 5px;
-  font-size: 20px;
+  margin: 1px 0px;
+  font-size: 15px;
 }
 
 /* section {
@@ -195,7 +195,7 @@ footer {
     margin: 0 auto;
     justify-content: center;
     height: 80vh;
-    width: 50vh;
+    width: 50vw;
     background: linear-gradient(0.25turn, #030303, #3023a3, #030303);
   }
   .current-weather {
@@ -206,7 +206,7 @@ footer {
     border-radius: 25px;
     margin: 5% auto;
     height: auto;
-    width: 90%;
+    width: 90vw;
     background: linear-gradient(0.25turn, #160f58bb, #1616ee73, #160f58bb);
     align-items: center;
     align-self: center;
@@ -246,7 +246,7 @@ footer {
   .daily-data-container {
     display: flex;
     flex-direction: column;
-    width: 18%;
+    width: 18vw;
   }
   .daily-data-container h4 p {
     font-size: 4px;
