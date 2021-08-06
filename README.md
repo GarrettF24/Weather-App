@@ -49,8 +49,8 @@ Project is a weather app that shows the search locations current weather and eve
 | July 30          | Prompt / Wireframes / Priority Matrix / Timeframes               | Complete   |
 | August 2         | Project approval, get basic structure set up, begin pseudocoding | Complete   |
 | August 3         | Begin coding, start MVP's                                        | Complete   |
-| August 4         | Finish MVP, finalize styling and descriptive comments            | Incomplete |
-| August 5         | Make sure everything works, Start on PMVP's                      | Incomplete |
+| August 4         | Finish MVP, finalize styling and descriptive comments            | Complete   |
+| August 5         | Make sure everything works, Start on PMVP's                      | Complete   |
 | August 6         | Presentations                                                    | Incomplete |
 | August 7-onwards | Cont. PMVP                                                       | ---        |
 
@@ -66,29 +66,35 @@ Project is a weather app that shows the search locations current weather and eve
 | Working with API                 |          H          |      3hr       |      3hr      |     3hr     |
 | Create Dyn HTML                  |          H          |      1hr       |      1hr      |     1hr     |
 | Basic CSS Layout                 |          H          |      1hr       |     1.5hr     |    1.5hr    |
-| Incorporate Flex Box             |          H          |      2hr       |     :---:     |    :---:    |
-| Adjust CSS                       |          H          |      1hr       |     :---:     |    :---:    |
-| Pseudocode                       |          H          |      5hr       |      2hr      |     2hr     |
+| Incorporate Flex Box             |          H          |      2hr       |      4hr      |     4hr     |
+| Adjust CSS                       |          H          |      1hr       |      2hr      |     2hr     |
+| Pseudocode                       |          H          |      3hr       |      2hr      |     2hr     |
 | Append items to DOM              |          H          |      3hr       |      2hr      |     2hr     |
 | Make sure API calls render       |          H          |      3hr       |      2hr      |     2hr     |
 | Remove Elements on new Search Fn |          H          |      1hr       |     20min     |    20min    |
-| Clean Code/Refactor              |          H          |      1hr       |     :--:      |    :---:    |
-| Future Forecast                  |          M          |      4hr       |     :---:     |    :---:    |
+| Clean Code/Refactor              |          H          |      1hr       |      1hr      |     1hr     |
+| Future Forecast                  |          M          |      4hr       |      3hr      |     3hr     |
 | Add Emoji                        |          L          |      5hr       |     :---:     |    :---:    |
 | Emoji Drop Display               |          L          |      4hr       |     :---:     |    :---:    |
 | Emoji Animations                 |          L          |      10hr      |     :---:     |    :---:    |
-| Total                            | H=Done for DeadLine |       46       |     :---:     |    :---:    |
+| Total                            | H=Done for DeadLine |       44       |     23hr      |    23hr     |
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+const weatherData = find.data;
+    const lat = weatherData.coord.lat;
+    const lon = weatherData.coord.lon;
+    const findForecast = await axios.get(
+      `https://api.troposphere.io/forecast/${lat},${lon}?token=1f04e75602d0534928c5e51adf08122f4dd12a89aed11cfb5c`
+    );
 ```
+
+I had to get a second api for 7 day forecast that only took coordinates as parameters. So I assigned the
+latitude and longitude of the first api to variables and using string interpolation inputted the search's coordinates into the second api to call the 7 day forecast.
 
 ## Change Log
 
-Use this section to document what changes were made and the reasoning behind those changes.
+I changed some of the styling, I originally wanted the the background to go from light to dark moving towards the center but reversed it as my original idea did not look good.
