@@ -11,7 +11,7 @@ Project is a weather app that shows the search locations current weather and 7 d
 ## API and Data Sample
 
 [Open weather api] (https://openweathermap.org/api;)
-[toposhere api]
+[troposhere api] (https://www.troposphere.io/")
 
 ```
 "coord": { "lon": -71.0583, "lat": 42.3603 },
