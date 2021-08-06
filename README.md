@@ -2,7 +2,7 @@
 
 ## Weather-App
 
-[My project here] (url here)
+(https://wams24.github.io/Weather-App/)
 
 ## Project Description
 
@@ -11,6 +11,7 @@ Project is a weather app that shows the search locations current weather and 7 d
 ## API and Data Sample
 
 [Open weather api] (https://openweathermap.org/api;)
+[toposhere api]
 
 ```
 "coord": { "lon": -71.0583, "lat": 42.3603 },
@@ -77,7 +78,7 @@ Project is a weather app that shows the search locations current weather and 7 d
 | Add Emoji                        |          L          |      5hr       |     :---:     |    :---:    |
 | Emoji Drop Display               |          L          |      4hr       |     :---:     |    :---:    |
 | Emoji Animations                 |          L          |      10hr      |     :---:     |    :---:    |
-| Total                            | H=Done for DeadLine |       44       |     25hr      |    25hr     |
+| Total                            | H=Done for DeadLine |       44       |     25hr      |     2hr     |
 
 ## Code Snippet
 
