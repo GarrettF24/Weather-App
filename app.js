@@ -8,6 +8,7 @@ let searchValue = "";
 
 //Async await function that calls on api
 //assign the data that is fetched from the api to a constant.
+//2nd api utilizes the first api's coordinates from the search.
 const getWeatherData = async () => {
   searchValue = document.querySelector("#weather-input").value;
   removeCurrentWeather(weatherSearchDiv);
@@ -33,7 +34,8 @@ const getWeatherData = async () => {
 //On clicking the search button getWeatherData is called on and it's
 //corresponding functions
 searchBtn.addEventListener("click", getWeatherData);
-
+//use string interpolation to assign data to the forecast div's. divs are inserted into
+//the weatherforecast container.
 function renderForecast(data) {
   data.forEach((day) => {
     let dailyData = `

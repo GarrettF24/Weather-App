@@ -6,7 +6,7 @@
 
 ## Project Description
 
-Project is a weather app that shows the search locations current weather and eventually future forecast.
+Project is a weather app that shows the search locations current weather and 7 day forecast.
 
 ## API and Data Sample
 
@@ -81,8 +81,6 @@ Project is a weather app that shows the search locations current weather and eve
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
 ```
 const weatherData = find.data;
     const lat = weatherData.coord.lat;
@@ -98,3 +96,5 @@ latitude and longitude of the first api to variables and using string interpolat
 ## Change Log
 
 I changed some of the styling, I originally wanted the the background to go from light to dark moving towards the center but reversed it as my original idea did not look good.
+
+Also had to utilize a second api because open weather api's forecast option was behind a paid subscription.
