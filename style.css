@@ -143,7 +143,7 @@ a:active {
 .current-weather {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
+  font: 16px;
   border-radius: 25px;
   margin: 2% 0px;
   height: 50vh;
@@ -155,15 +155,20 @@ a:active {
   margin-bottom: 10px;
 }
 
+.current-weather p {
+  margin: 12px 0px;
+  font-size: 15px;
+}
+
 .current-weather:hover {
   transform: scale(1.02);
   transition: 0.8s ease;
   box-shadow: 5px 4px #160f58bb;
 }
 
-.current-weather img {
-  /* width: 20vw; */
-}
+/* .current-weather img {
+   width: 20vw; 
+} */
 
 .current-weather p {
   margin: 1px 0px;
@@ -184,12 +189,33 @@ footer {
   flex-direction: column;
   width: 98%;
   margin: 0 auto;
+  /* bottom: 0; */
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background-color: #e6d9d957;
   padding: 20px 10px;
-
   font-family: "Raleway", sans-serif;
   position: absolute;
+}
+
+@media only screen and (max-width: 805px) {
+  .forecast-container {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    flex-wrap: wrap;
+    order: 1;
+  }
+
+  .daily-data-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 25%;
+  }
+  .daily-data-container p,
+  h4 {
+    font-size: 10px;
+  }
 }
