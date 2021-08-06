@@ -65,19 +65,19 @@ Project is a weather app that shows the search locations current weather and 7 d
 | Adding Form                      |          H          |      2hr       |      1hr      |     1hr     |
 | Working with API                 |          H          |      3hr       |      3hr      |     3hr     |
 | Create Dyn HTML                  |          H          |      1hr       |      1hr      |     1hr     |
-| Basic CSS Layout                 |          H          |      1hr       |     1.5hr     |    1.5hr    |
+| Basic CSS Layout                 |          H          |      1hr       |      2hr      |     2hr     |
 | Incorporate Flex Box             |          H          |      2hr       |      4hr      |     4hr     |
 | Adjust CSS                       |          H          |      1hr       |      2hr      |     2hr     |
 | Pseudocode                       |          H          |      3hr       |      2hr      |     2hr     |
 | Append items to DOM              |          H          |      3hr       |      2hr      |     2hr     |
 | Make sure API calls render       |          H          |      3hr       |      2hr      |     2hr     |
-| Remove Elements on new Search Fn |          H          |      1hr       |     20min     |    20min    |
+| Remove Elements on new Search Fn |          H          |      1hr       |      1hr      |     1hr     |
 | Clean Code/Refactor              |          H          |      1hr       |      1hr      |     1hr     |
 | Future Forecast                  |          M          |      4hr       |      3hr      |     3hr     |
 | Add Emoji                        |          L          |      5hr       |     :---:     |    :---:    |
 | Emoji Drop Display               |          L          |      4hr       |     :---:     |    :---:    |
 | Emoji Animations                 |          L          |      10hr      |     :---:     |    :---:    |
-| Total                            | H=Done for DeadLine |       44       |     23hr      |    23hr     |
+| Total                            | H=Done for DeadLine |       44       |     25hr      |    25hr     |
 
 ## Code Snippet
 

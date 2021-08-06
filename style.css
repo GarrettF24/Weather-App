@@ -12,8 +12,6 @@ body {
 #header {
   display: flex;
   flex-direction: column;
-  /* margin: 0px 0px 20px 0px;
-  border: 1px solid black; */
   width: 98%;
   margin: 0 auto;
   align-items: center;
@@ -21,7 +19,6 @@ body {
   overflow: hidden;
   background-color: #e6d9d957;
   padding: 20px 10px;
-  /* margin-top: -10px; */
   margin-bottom: 10px;
 }
 
@@ -38,13 +35,13 @@ body {
 
 a {
   color: #ffffff;
-} /* Unvisited link  */
+}
 a:visited {
   color: #ffffff;
-} /* Visited link    */
+}
 a:hover {
   color: #ffffff;
-} /* Mouse over link */
+}
 a:active {
   color: #ffffff;
 }
@@ -89,14 +86,12 @@ a:active {
   flex-direction: column;
   justify-content: center;
   margin: 5px;
-  /* height: 80vh; */
   background: linear-gradient(0.25turn, #030303, #3023a3, #030303);
 }
 
 .forecast-container {
   display: flex;
   flex-direction: row;
-  /* border: 1px solid white; */
   justify-content: center;
   margin: 0 auto;
   width: 98%;
@@ -106,23 +101,7 @@ a:active {
   margin-bottom: 0px;
 }
 
-/* .daily-weather {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid red;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  margin: 0;
-  background: linear-gradient(0.25turn, #160f58bb, #0c0c8573, #160f58bb);
-  align-items: center;
-  align-self: center;
-  color: rgba(250, 235, 215, 0.781);
-  overflow-x: hidden;
-} */
-
 .daily-data-container {
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -133,7 +112,6 @@ a:active {
   align-items: center;
   align-self: center;
   color: rgba(250, 235, 215, 0.781);
-  /* overflow-x: hidden; */
 }
 
 .daily-data-container p {
@@ -147,7 +125,7 @@ a:active {
   border-radius: 25px;
   margin: 2% 0px;
   height: 30%;
-  width: 50vw;
+  width: 35vw;
   background: linear-gradient(0.25turn, #160f58bb, #0c0c8573, #160f58bb);
   align-items: center;
   align-self: center;
@@ -166,27 +144,10 @@ a:active {
   box-shadow: 5px 4px #160f58bb;
 }
 
-/* .divider {
-  height: 100px;
-} */
-
-/* .current-weather img {
-   width: 20vw; 
-} */
-
 .current-weather p {
   margin: 1px 0px;
   font-size: 15px;
 }
-
-/* section {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 15vh;
-  order: 1;
-  margin-top: 5px; 
-} */
 
 footer {
   display: flex;
